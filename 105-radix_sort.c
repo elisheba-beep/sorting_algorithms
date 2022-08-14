@@ -26,9 +26,9 @@ int get_digit(long number, int digit)
  *
  * Return: void.
  */
-int radix_pass(int *array, size_t size, int digit, int *new_array)
+int radix_pass(int *array, ssize_t size, int digit, int *new_array)
 {
-	size_t i;
+	ssize_t i;
 	int buckets[10] = {0};
 
 	for (i = 0; i < size; i++)
@@ -66,7 +66,7 @@ void radix_sort(int *array, size_t size)
 		return;
 	for (i = 0; i < sd; i++)
 	{
-		radix_pass(old_array, (size_t)size, i, new_array);
+		radix_pass(old_array, (ssize_t)size, i, new_array);
 		temp_ptr = old_array;
 		old_array = new_array;
 		new_array = temp_ptr;
